@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                   alignLabelWithHint: true,
                   hintText: 'you@example.com',
                   labelText: 'Email Address',
-                  errorText: snapshot.error.toString(),
+                  errorText: snapshot.error?.toString()??"",
                ),
              );
            }
@@ -42,19 +42,20 @@ class LoginScreen extends StatelessWidget {
      stream: bloc.password,
      builder: (context, snapshot){
            return TextField(
+      onChanged: bloc.changePassword,
       obscureText: true,
       decoration: InputDecoration(
         alignLabelWithHint: true,
         hintText: 'Password',
         labelText: 'Password',
-        errorText: snapshot.error.toString(),
+        errorText: snapshot.error?.toString()??"",
+        errorStyle: TextStyle(
+          color: Colors.blue,
+          ),
       ),
     );
   },
    );
-
-
-    
   }
 
   Widget submitButton() {
