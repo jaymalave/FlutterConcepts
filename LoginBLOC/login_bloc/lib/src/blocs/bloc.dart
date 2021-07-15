@@ -19,4 +19,6 @@ class Bloc extends Validators{
   }
 }
 
-final bloc = Bloc();
+
+//Single Global Instance
+// final bloc = Bloc();
