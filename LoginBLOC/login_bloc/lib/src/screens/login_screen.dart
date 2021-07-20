@@ -1,5 +1,4 @@
 import 'dart:js';
-
 import 'package:flutter/material.dart';
 import '../blocs/bloc.dart';
 import '../blocs/provider.dart';
@@ -65,11 +64,10 @@ class LoginScreen extends StatelessWidget {
       stream: bloc.submitValid,
       builder: (context, snapshot) {
         return RaisedButton(
-          onPressed: snapshot.hasError
-              ? null
-              : () {
-                  print('Enabled!');
-                },
+          onPressed: snapshot.hasData
+              ? 
+              bloc.submit
+              : null,
           child: Text('Log in'),
           color: Colors.blue,
         );
