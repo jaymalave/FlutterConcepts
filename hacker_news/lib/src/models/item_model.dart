@@ -1,12 +1,12 @@
 class ItemModel {
   final int id;
-  final bool deleted;
+  // final bool deleted;
   final String type;
   final String by;
   final int time;
   final String text;
-  final bool dead;
-  final int parent;
+  // final bool dead;
+  // final int parent;
   final List<dynamic> kids;
   final String url;
   final int score;
@@ -14,14 +14,14 @@ class ItemModel {
   final int descendants;
   // final Map<String, dynamic> parsedJson;
 
-  ItemModel.fromJson(Map, this.parent<String, dynamic>, parsedJson)
+  ItemModel.fromJson(parsedJson)
    : id = parsedJson['id'],
-     deleted = parsedJson['deleted'],
+    //  deleted = parsedJson['deleted'],
      type = parsedJson['type'],
      by = parsedJson['by'],
      time = parsedJson['time'],
      text = parsedJson['text'],
-     dead = parsedJson['parent'],
+    //  dead = parsedJson['parent'],
      kids = parsedJson['kids'],
      url = parsedJson['url'],
      score = parsedJson['score'],
