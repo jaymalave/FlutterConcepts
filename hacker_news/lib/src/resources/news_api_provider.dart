@@ -1,25 +1,27 @@
 import 'package:http/http.dart' show Client;
 import '../models/item_model.dart';
 import 'dart:convert';
+import 'package:flutter/material.dart';
 
 final _root = "https://hacker-news.firebaseio.com/v0";
 
-class NewsApiProvider{
+class NewsApiProvider {
   Client client = new Client();
 
   //fetch top news
   fetchTopIds() async {
-     final response = await client.get(Uri.parse('$_root/topstories.json'));
-     final ids = json.decode(response.body);
+    final response = await client.get(Uri.parse('$_root/topstories.json'));
+    final ids = json.decode(response.body);
 
-     return ids;
+    return ids;
   }
 
   //fetch a particular news
-  fetchItem(int id) async{
+  fetchItem(int id) async {
     final response = await client.get(Uri.parse('$_root/item/$id.json'));
     final parsedJson = json.decode(response.body);
-
-    return ItemModel.fromJson(parsedJson);
+    
+    //should return an ItemModel
+    return parsedJson;
   }
 }

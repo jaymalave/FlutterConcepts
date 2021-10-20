@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class ItemModel {
   final int id;
   final bool deleted;
@@ -14,19 +16,19 @@ class ItemModel {
   final int descendants;
   // final Map<String, dynamic> parsedJson;
 
-  ItemModel.fromJson(parsedJson)
-   : id = parsedJson['id'],
-     deleted = parsedJson['deleted'],
-     type = parsedJson['type'],
-     by = parsedJson['by'],
-     time = parsedJson['time'],
-     text = parsedJson['text'],
-     dead = parsedJson['parent'],
-     kids = parsedJson['kids'],
-     url = parsedJson['url'],
-     score = parsedJson['score'],
-     title = parsedJson['title'],
-     descendants = parsedJson['descendants'];
+  ItemModel.fromJson(parsedJson, this.parent)
+      : id = parsedJson['id'],
+        deleted = parsedJson['deleted'],
+        type = parsedJson['type'],
+        by = parsedJson['by'],
+        time = parsedJson['time'],
+        text = parsedJson['text'],
+        dead = parsedJson['parent'],
+        kids = parsedJson['kids'],
+        url = parsedJson['url'],
+        score = parsedJson['score'],
+        title = parsedJson['title'],
+        descendants = parsedJson['descendants'];
 
-  static get parsedJson => null;     
+  static get parsedJson => null;
 }
